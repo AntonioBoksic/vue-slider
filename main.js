@@ -13,6 +13,74 @@
         console.log(myArr);
         */
 
+        // ESERCIZIO CON VUE PARTE DA QUA 
+        //DEVO CREARE ISTANZA VUE E INSERIRCI I DATI DENTRO PRIMA DI TUTTO
+        
+        const {createApp} = Vue
+
+        createApp({
+            data() {
+                return {
+                    activeImage : 0,
+                    images : [
+                        {
+                            image: 'img/01.webp',
+                            title: 'Marvel-s Spiderman Miles Morale',
+                            text: 'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.',
+                        }, {
+                            image: 'img/02.webp',
+                            title: 'Ratchet & Clank: Rift Apart',
+                            text: 'Go dimension-hopping with Ratchet and Clank as they take on an evil emperor from another reality.',
+                        }, {
+                            image: 'img/03.webp',
+                            title: 'Fortnite',
+                            text: "Grab all of your friends and drop into Epic Games Fortnite, a massive 100 - player face - off that combines looting, crafting, shootouts and chaos.",
+                        }, {
+                            image: 'img/04.webp',
+                            title: 'Stray',
+                            text: 'Lost, injured and alone, a stray cat must untangle an ancient mystery to escape a long-forgotten city',
+                        }, {
+                            image: 'img/05.webp',
+                            title: "Marvel's Avengers",
+                            text: 'Marvel-s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
+                        }
+                    ],
+                }
+            },
+            methods: {
+
+                nextImage: function() {
+                    this.activeImage++;
+                    if(this.activeImage === this.images.length ){
+                        this.activeImage = 0;
+                    }
+                },
+
+                prevImage: function() {
+                    this.activeImage--;
+                    if(this.activeImage < 0 ){
+                        this.activeImage = this.images.length -1;
+                    }
+                },
+
+                
+
+            }
+        }).mount("#app")
+
+
+
+
+
+
+
+
+/*
+*/
+
+
+        //questo posso commentarlo perchè i dati li ho inseriti nell'istanza di Vue
+        /*
         const images = [
             {
                 image: 'img/01.webp',
@@ -36,10 +104,16 @@
                 text: 'Marvel-s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
             }
         ];
+        */
 
+        //questo non mi serve più perchè con Vue comunico direttamente con l'elemento HTML senza doverlo specificare come farei con Vanilla JS
+        /*
         // creazione variabile container in cui andranno le immagini
         const itemsContainer = document.getElementById("itemsContainer");
+        */
 
+        // invece di ciclare l HTML con Vanilla JS, vado a inserire il codice HTML direttamente nel file HTML e lo ciclo direttamente lì
+        /*
         images.forEach((element) =>
             {
                 const divElement = `<div class="item">
@@ -62,6 +136,7 @@
                 </div>`;   
 
                 itemsContainer.innerHTML += divElement;
+                */
                 
                 // const titoloTestoElement = `<div class="titleText">
                 // <img src="${element.image}" alt="">
@@ -69,9 +144,9 @@
 
                 // itemsContainer.innerHTML += titoloTestoElement
 
-            }
+            //}
 
-        )
+        //)
 
         /*
         for (let i = 0; i<myArr.length; i++) {
@@ -89,6 +164,11 @@
             // itemsContainer.append(divElement)
         };
         */
+
+
+//commento tutto da qua in poi per stare sereno, al massimo scommento dopo
+
+/*
 
         // SELEZIONIAMO IMMAGINE 0 PER DARE CLASSE ACTIVE   
         let imagePosition = 0;
@@ -136,4 +216,4 @@
             }
         );
 
-     
+     */

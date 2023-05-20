@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Carousel VUE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+     <div id="app">
+       
+      
+        <div class="container">
+            <div class="slider">
+                <div class="itemsContainer" id="itemsContainer">
+                    <!-- prima il div "item" me lo costruivo con JS perchè mi serviva fare riferimento ad esso dentro a JS, con Vue non più -->
+                    <div class="item" >
+
+                        <div class="titleAndText">
+                        
+                            <h2>
+                                {{images[activeImage].title}}
+                            </h2>
+
+                            <h3>
+                                {{images[activeImage].text}}
+                            </h3>
+                        
+
+                        </div>
+                        
+                    
+                        <img :src="images[activeImage].image" >
+                    </div>
+                    
+                
+                    <btn class="next" id="btnNext" @click="nextImage">
+                        NEXT
+                    </btn>
+
+                    <btn class="previous" id="btnPrevious" @click="prevImage">
+                        PREV
+                    </btn>
+                    
+
+                </div>
+            </div>
+        </div>
+    
+        
+    </div>
+
+    
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

@@ -28,7 +28,7 @@
 
 .item {
     height: 100%;
-    display: none;
+    /* display: none; */
 }
 
 /* .item.active è + specifico di item o di active?a quanto pare si, e quindi si può mettere anche prima/sopra a selettore .item */
