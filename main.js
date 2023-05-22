@@ -53,8 +53,10 @@
                     this.activeImage++;
                     if(this.activeImage === this.images.length ){
                         this.activeImage = 0;
-                    }
+                    } 
                 },
+
+                //timer : setInterval(this.nextImage, 5000),
 
                 prevImage: function() {
                     this.activeImage--;
@@ -62,6 +64,15 @@
                         this.activeImage = this.images.length -1;
                     }
                 },
+                        /*
+                selectImage: function() {
+                    this.activeImage = ????come gli dico di riferirsi all index del v for?????
+                },
+                        */
+
+
+
+
 
                 
 
@@ -69,7 +80,24 @@
         }).mount("#app")
 
 
-
+/*
+<script>
+    var timer;
+      
+    function startTimer() {
+        timer = setInterval(function() { 
+            document.getElementById('gfg')
+                    .innerHTML = " 5 seconds are up "; 
+        }, 5000);
+    }
+      
+    function stopTimer() {
+        document.getElementById('gfg')
+                .innerHTML = " Timer stopped ";
+        clearInterval(timer); 
+    }
+</script>
+*/
 
 
 
